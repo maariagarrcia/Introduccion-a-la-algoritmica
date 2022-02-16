@@ -54,3 +54,7 @@ def area_triangulo():
 
 
 ### V A R I A B L E S   G L O B A L E S
+
+
+
+
