@@ -39,7 +39,21 @@ def precio_con_impuestos():
 def intereses_compuestos():
     mostrar_titulo("INTERESES COMPUESTOS (tipo periodo MENSUAL)")
 
-#Ejercicii 9
+    # Leer datos
+    capital_inicial = helpers.inputInt("Capital (entero)")
+    meses = helpers.inputInt("Meses en depósito (entero)", 1, 12)
+    porcentaje_interes_mensual = helpers.inputInt(
+        "Porcentaje Intereses MENSUAL (0-100)", 0, 100)
+
+    # Mostrar el resultado
+    # Capital final = C0 x (1+Ti) ^t
+    capital_final = capital_inicial * \
+        (1 + porcentaje_interes_mensual/100) ** meses
+    print()
+    mostrar_resultado("Capital Final", capital_final)
+
+
+# Ejercicio 9
 
 def media_aritmetica():
     mostrar_titulo("MEDIA ARITMETICA (3 numeros")
