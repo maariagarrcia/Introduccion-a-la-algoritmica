@@ -67,9 +67,27 @@ def media_aritmetica():
     print()
     mostrar_resultado("Media aritmetica", media_aritmetica)
 
-    
+
 def media_ponderada():
     mostrar_titulo("MEDIA PONDERADA (3 numeros) ")
+    # Leer datos
+    numero_a = helpers.inputInt("Primer Valor (entero)")
+    ponderacion_a = helpers.inputInt("Porcentaje ponderacion (0-100)")
+
+    numero_b = helpers.inputInt("Segundo Valor (entero)")
+    max_ponderacion_b = 100-ponderacion_a
+    ponderacion_b = helpers.inputInt(
+        "Porcentaje ponderacion (0-" + str(max_ponderacion_b)+")", 0, max_ponderacion_b)
+
+    numero_c = helpers.inputInt("Tercer Valor (entero)")
+
+    # Calcular y mostrar el resultado
+    ponderacion_c = 100 - ponderacion_a - ponderacion_b
+    media_ponderada = (numero_a*ponderacion_a/100 + numero_b *
+                       ponderacion_b/100 + numero_c*ponderacion_c/100) 
+    print()
+    mostrar_resultado("Porcentaje ponderación (tercer valor)", ponderacion_c)
+    mostrar_resultado("Media ponderada", media_ponderada)
 
 
 # Ejercicio 10
