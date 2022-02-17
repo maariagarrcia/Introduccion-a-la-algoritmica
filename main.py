@@ -9,7 +9,7 @@
 
 
 ### I M P O R T S
-from colorama import Fore
+from colorama import *
 import helpers
 
 ### F U N C I O N E S
@@ -101,14 +101,17 @@ def area_triangulo():
 
 
 
+
+
+
 #
 #
 # I N I C I O    P R O G R A M A
 #
 #
+helpers.clear()  # Limpia la terminal
 
 
-### V A R I A B L E S   G L O B A L E S
 
 
 
