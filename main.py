@@ -57,7 +57,17 @@ def intereses_compuestos():
 
 def media_aritmetica():
     mostrar_titulo("MEDIA ARITMETICA (3 numeros")
+    # Leer datos
+    numero_a = helpers.inputInt("Primer Valor (entero)")
+    numero_b = helpers.inputInt("Segundo Valor (entero)")
+    numero_c = helpers.inputInt("Tercer Valor (entero)")
 
+    # Mostrar el resultado
+    media_aritmetica = (numero_a + numero_b + numero_c) / 3
+    print()
+    mostrar_resultado("Media aritmetica", media_aritmetica)
+
+    
 def media_ponderada():
     mostrar_titulo("MEDIA PONDERADA (3 numeros) ")
 
