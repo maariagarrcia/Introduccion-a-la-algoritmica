@@ -8,9 +8,10 @@
 # que enseñe el resultado
 
 
-
 ### I M P O R T S
 from colorama import Fore
+import helpers
+
 ### F U N C I O N E S
 def mostrar_titulo(titulo):
     print(Fore.YELLOW + titulo)
@@ -19,10 +20,22 @@ def mostrar_titulo(titulo):
 def mostrar_resultado(descripcion,resultado):
     print(Fore.WHITE + "> " + descripcion + Fore.YELLOW, resultado, Fore.WHITE)
 
-#Ejercicio 8
+# Ejercicio 8
 def precio_con_impuestos():
     mostrar_titulo("PRECIO CON IMPUESTOS")
+    # Leer datos
+    base_imponible = helpers.inputInt("Base Imponible (entero)")
+    porcentaje_iva = helpers.inputInt("Porcentaje IVA (0-100)", 0, 100)
 
+    # Mostrar el resultado
+    precio_con_impuestos = base_imponible * (1 + porcentaje_iva/100)
+    print()
+    mostrar_resultado("Precio con impuestos incluidos", precio_con_impuestos)
+
+
+
+# Calculo del interés compuesto .... https://es.wikipedia.org/wiki/Inter%C3%A9s_compuesto
+# Calculo de potencias en python ... https://www.w3schools.com/python/python_operators.asp
 def intereses_compuestos():
     mostrar_titulo("INTERESES COMPUESTOS (tipo periodo MENSUAL)")
 
