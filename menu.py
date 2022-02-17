@@ -21,3 +21,21 @@ def aceptarOpcionMenu():
             print(Fore.RED + '* ATENCION:  Selecciona una opción valida ...' + Fore.WHITE)
 
     return opcion
+
+
+
+def show():
+    helpers.clear()
+    print(Fore.GREEN + 'MENU')
+    print('====')
+    print('1 - Precio con impuestos')
+    print('2 - Importe intereses generados')
+    print('3 - Media aritmetica de tres números')
+    print('4 - Media ponderada de tres números')
+    print('5 - Area de un triángulo' )
+    print('6 - ...')
+    print('F - Finalizar')
+    print(Fore.WHITE)
+
+    opcion = aceptarOpcionMenu()
+    return opcion

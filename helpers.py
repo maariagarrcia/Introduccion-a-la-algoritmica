@@ -1,8 +1,11 @@
+## I M P O R T S 
+import os
+from colorama import Fore
+
+
 #
 # FUNCIONES  AUXILIARES
 #
-
-import os
 
 # Limpiar la terminal.
 # No funciona al ejecutar en ventana interactiva
@@ -12,6 +15,8 @@ def clear():
     else:
         os.system("clear")
 
+def esperarIntro():
+    input(Fore.GREEN + '\nPulsa <INTRO> para continuar... ' + Fore.WHITE)
 
 # Acepta un número entero
 def inputInt(descripcion, min=None, max=None):

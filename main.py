@@ -11,6 +11,7 @@
 ### I M P O R T S
 from colorama import *
 import helpers
+import menu
 
 ### F U N C I O N E S
 def mostrar_titulo(titulo):
@@ -32,8 +33,6 @@ def precio_con_impuestos():
     print()
     mostrar_resultado("Precio con impuestos incluidos", precio_con_impuestos)
 
-
-
 # Calculo del interés compuesto .... https://es.wikipedia.org/wiki/Inter%C3%A9s_compuesto
 # Calculo de potencias en python ... https://www.w3schools.com/python/python_operators.asp
 def intereses_compuestos():
@@ -54,7 +53,6 @@ def intereses_compuestos():
 
 
 # Ejercicio 9
-
 def media_aritmetica():
     mostrar_titulo("MEDIA ARITMETICA (3 numeros")
     # Leer datos
@@ -66,7 +64,6 @@ def media_aritmetica():
     media_aritmetica = (numero_a + numero_b + numero_c) / 3
     print()
     mostrar_resultado("Media aritmetica", media_aritmetica)
-
 
 def media_ponderada():
     mostrar_titulo("MEDIA PONDERADA (3 numeros) ")
@@ -91,16 +88,8 @@ def media_ponderada():
 
 
 # Ejercicio 10
-
 def area_triangulo():
     mostrar_titulo("AREA TRIANGULO")
-
-
-
-
-
-
-
 
 
 
@@ -111,8 +100,29 @@ def area_triangulo():
 #
 helpers.clear()  # Limpia la terminal
 
+while (True):
+    opcion = menu.show()
+    helpers.clear()
 
+    if (opcion == 1):
+        precio_con_impuestos()
+    elif (opcion == 2):
+        intereses_compuestos()
+    elif (opcion == 3):
+        media_aritmetica()
+    elif (opcion == 4):
+        media_ponderada()
+    elif (opcion == 5):
+        pass
+    elif (opcion == 6):
+        pass
+    elif (opcion == 7):
+        pass
+    elif (opcion == 8):
+        pass
+    elif (opcion == -1):  # Salir
+        print(Fore.GREEN + '> Nos vemos otro dia :-)')
+        print(Fore.WHITE)
+        break  # =============================>
 
-
-
-
+    helpers.esperarIntro()
