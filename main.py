@@ -9,9 +9,11 @@
 
 
 ### I M P O R T S
-from colorama import *
+from email.mime import base
 import helpers
 import menu
+from colorama import *
+from cuenta import *
 
 ### F U N C I O N E S
 def mostrar_titulo(titulo):
@@ -131,7 +133,6 @@ def area_triangulo():
     mostrar_resultado("Base", semibase*2)
     mostrar_resultado("Área triangulo", area)
 
-
 # Ejercicio 11
 def salario_a_pagar():
     # Datos fijos
@@ -184,6 +185,37 @@ def salario_a_pagar():
     mostrar_resultado("Importe total horas extra", importe_horas_extra_total)
     mostrar_resultado("Importe TOTAL NOMINA", importe_nomina)
 
+# Ejercicio 12
+def cuenta_bancaria():   
+    mostrar_titulo("GESTION CUENTAS BANCARIAS (Orientado a objetos)")
+
+    # Crear una cuenta
+    print("DATOS PARA CREAR LA CUENTA")
+    titular = input("· Titular de la cuenta "+Fore.YELLOW)
+    saldo_inicial = helpers.inputInt(Fore.WHITE+"Capital (entero)", 0)
+    descubierto_permitido = helpers.inputInt("Descubierto permitido", 0)
+    mi_cuenta = Cuenta(titular, saldo_inicial, descubierto_permitido)
+
+    print("\n DATOS DE LA CUENTA")
+    mostrar_resultado("Titular de la cuenta", mi_cuenta.titular)
+    mostrar_resultado("Saldo", mi_cuenta.saldo)
+    mostrar_resultado("Descubierto permitido", mi_cuenta.descubierto_permitido)
+    print()
+
+    # Operar con la cuenta
+    print("OPERACIONES CON LA CUENTA")
+    cantidad_a_ingresar = helpers.inputInt("Cantidad a ingresar", 0)
+    mi_cuenta.ingresar(cantidad_a_ingresar)
+    mostrar_resultado("Saldo despues del ingreso", mi_cuenta.saldo)
+
+
+    cantidad_a_retirar = helpers.inputInt("Cantidad a retirar", 0)
+    if mi_cuenta.retirar(cantidad_a_retirar):
+        mostrar_resultado("Saldo despues de la retirada", mi_cuenta.saldo)
+    else:
+        print(Fore.RED + "Operación no permitida" + Fore.WHITE)
+
+
 
 #
 #
@@ -205,13 +237,12 @@ while (True):
     elif (opcion == 4):
         media_ponderada()
     elif (opcion == 5):
-        pass
+        area_triangulo()
     elif (opcion == 6):
-        pass
+        salario_a_pagar()
     elif (opcion == 7):
-        pass
-    elif (opcion == 8):
-        pass
+        cuenta_bancaria()
+
     elif (opcion == -1):  # Salir
         print(Fore.GREEN + '> Nos vemos otro dia :-)')
         print(Fore.WHITE)
