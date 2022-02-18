@@ -1,13 +1,3 @@
-# Programa que pide por teclado que algoritmo desea calcular(mostrar por
-# pantalla las posibles opciones) y que el usuario introduzca el número del 
-# respectivo algoritmo que desee calcular(Comprobar que sea un 
-# numero válido etc, lo de siempre).
-# Cda vez que se introduzca un n´mero debe aparecer el título de lo que se
-# está haciendo.
-# Cada función tiene que tener mostrar titulo + su algoritmo + variables y
-# que enseñe el resultado
-
-
 ### I M P O R T S
 from email.mime import base
 import helpers
