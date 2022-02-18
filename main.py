@@ -86,10 +86,51 @@ def media_ponderada():
     mostrar_resultado("Porcentaje ponderación (tercer valor)", ponderacion_c)
     mostrar_resultado("Media ponderada", media_ponderada)
 
-
 # Ejercicio 10
+# PLANTEAMIENTO
+# =============
+# 1) Los triangulo tienen tres alturas, es decir que cada lado tiene una altura asociada.
+#
+# 2) Para calcular el area de un triangulo se necesita una combinación suficiente de datos
+#    como la altura y la base (que no es el caso), los tres lados, dos lados y la altura, ...
+#
+# 3) Nosotro disponemos solo de un lado y su altura asociada por lo que si queremos calcular el area:
+#       · Si el triangulo es escaleno => Los datos que tenemos son INSUFICIENTES
+#       · es SUFICIENTE si es equilatero ya que cualquier lado actua como base.
+#       · si es un triangulo isosceles hay dos caso:
+#           1) La altura proporcionada es entre los lados congruentes -> DATOS INSUFICIENTE
+#           2) La altura proporcionada es entre un lado respecto al lado incongruente -> SUFICIENTE,
+#              ya dicha altura dividira el triangulo en dos semitriangulos simétricos....
+#
+# 4) Respecto al TRIANGULO RECTANGULO:
+#       · Aplica lo anterior, es decir, solo se podra obtener el área si es isosceles (un angulo de
+#           90º y dos de 45ª) y de nuevo hay dos casos:
+#               1) El lado proporcionado es la hipotenusa. En este caso la altura coincidirá
+#                  con uno de los catetos => DATOS SUFICIENTES 
+#               2) El lado proporcionado no es la hipotenusa. En este caso será un un cateo 
+#                  y la altura no aportaria información ya que será igual al cateto (y coincidente :-O )
+#
 def area_triangulo():
-    mostrar_titulo("AREA TRIANGULO")
+    mostrar_titulo("AREA TRIANGULO (Ver justificación en comentarios del coodigo)")
+    print("1) El triangulo no puede ser escaleno")
+    print("2) Si el triangulo es isosceles debe proporcionar uno de los lados incongruentes")
+    print("   y la altura respecto al lado incongruente (que sera la base)")
+    print()
+
+    # Leer datos
+    lado = helpers.inputReal("Lado (real positivo)", 0)
+    altura = helpers.inputReal("Altura (real positivo)", 0)
+
+    # Calcular la semibasebase y el área
+    semibase = (lado**2 -altura**2) ** 0.5
+    area = semibase * altura  
+    es_equilatero = (2*semibase == altura)
+
+    # Mostrar resultados
+    mostrar_resultado("El triangulo es equilatero?", es_equilatero)
+    mostrar_resultado("Base", semibase*2)
+    mostrar_resultado("Área triangulo", area)
+
 
 # Ejercicio 11
 def salario_a_pagar():
