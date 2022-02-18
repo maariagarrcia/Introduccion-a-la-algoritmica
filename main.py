@@ -91,6 +91,57 @@ def media_ponderada():
 def area_triangulo():
     mostrar_titulo("AREA TRIANGULO")
 
+# Ejercicio 11
+def salario_a_pagar():
+    # Datos fijos
+    # Se aplica entre 36 y 43 horas extra
+    incremento_tarifa_horas_extra_tramo_1 = 1.25
+    # Se aplica a partir de la 44 horas extra
+    incremento_tarifa_horas_extra_tramo_2 = 1.50
+
+    # Leer datos
+    salario_bruto_mensual = helpers.inputInt(
+        "Salario bruto mensual (entero positivo)", 1)
+    horas_extra = helpers.inputInt("Horas extra mensuales (entero positivo)", 0)
+
+    # Calculo tarifa normal horas extra
+    salario_bruto_anual = salario_bruto_mensual * 12
+    salario_bruto_semanal = salario_bruto_anual / 52
+    tarifa_horas_normales = salario_bruto_semanal / 35
+
+    # Calcular importe horas extra
+    horas_extra_tramo_1 = 0
+    horas_extra_tramo_2 = 0
+    if (horas_extra > 8):
+        horas_extra_tramo_2 = horas_extra - 8
+        horas_extra_tramo_1 = 8
+    elif (horas_extra > 0):
+        horas_extra_tramo_1 = horas_extra
+
+    importe_horas_extra_tramo_1 = horas_extra_tramo_1 * \
+        tarifa_horas_normales * incremento_tarifa_horas_extra_tramo_1
+
+    importe_horas_extra_tramo_2 = horas_extra_tramo_2 * \
+        tarifa_horas_normales * incremento_tarifa_horas_extra_tramo_2
+
+    importe_horas_extra_total = importe_horas_extra_tramo_1 + importe_horas_extra_tramo_2
+
+    # Importe nómina
+    importe_nomina = importe_horas_extra_total + salario_bruto_mensual
+
+    # Mostrar resultados
+    print()
+    mostrar_resultado("Tarifa horas normales", tarifa_horas_normales)
+    mostrar_resultado("Importe horas extra tramo 1 (" + str(horas_extra_tramo_1) + " horas a " +
+                      str(tarifa_horas_normales *
+                          incremento_tarifa_horas_extra_tramo_1)+")",
+                      importe_horas_extra_tramo_1)
+    mostrar_resultado("Importe horas extra tramo 2 (" + str(horas_extra_tramo_2) + " horas a " +
+                      str(tarifa_horas_normales *
+                          incremento_tarifa_horas_extra_tramo_2)+")",
+                      importe_horas_extra_tramo_2)
+    mostrar_resultado("Importe total horas extra", importe_horas_extra_total)
+    mostrar_resultado("Importe TOTAL NOMINA", importe_nomina)
 
 
 #
